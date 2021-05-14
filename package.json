@@ -20,5 +20,8 @@
   "homepage": "https://github.com/nicolaspartearroyo/myFlix#readme",
   "dependencies": {
     "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "eslint": "^7.26.0"
   }
 }
