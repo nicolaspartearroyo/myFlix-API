@@ -108,10 +108,16 @@ app.get('/directors/:name', (req, res) => {
 
 //Create New User
 app.post('/users', (req, res) => {
-    users.push(req.body);
-    res.status(201).send('User successfully created');
+  let newUser = req.body;
+
+if (!newUser.name) {
+  const message = 'Missing name in request body';
+  res.status(400).send(message);
+} else {
+  users.push(newUser);
+  res.status(201).send('User successfully created');
   }
-);
+});
 
 //Updates user information and favourites movies. Not sure how to work with PUT!!!
 app.put('/users/:username', (req, res) => {
