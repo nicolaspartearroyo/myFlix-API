@@ -115,8 +115,6 @@ app.post('/users', (req, res) => {
   res.status(201).send('User successfully created');
 });
 
-student = username
-students = users
 //Updates user information and favourites movies. Not sure how to work with PUT!!!
 app.put('/users/:username', (req, res) => {
   let username = users.find((username) => { return username.name === req.params.name });
