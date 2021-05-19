@@ -117,24 +117,20 @@ app.post('/users', (req, res) => {
 
 //Updates user information and favourites movies. Not sure how to work with PUT!!!
 app.put('/users/:username', (req, res) => {
-  let username = users.find((username) => { return username.name === req.params.name });
   res.status(201).send('New information was successfully updated');
 });
 
 
 app.put('/users/:username/favourites', (req, res) => {
-  let username = users.find((username) => { return username.name === req.params.name });
   res.status(201).send('Favourite movie was successfully updated');
 });
 
 //Delete
 app.delete('/users/:username/favourites/[movies]',  (req, res) => {
-  let username = users.find((username) => { return username.name === req.params.name });
   res.status(201).send('Movie was deleted');
 });
 
 app.delete('/users/:username',  (req, res) => {
-  let username = users.find((username) => { return username.name === req.params.name });
   res.status(201).send('User was successfully deleted');
 });
 
