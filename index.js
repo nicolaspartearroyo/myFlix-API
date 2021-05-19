@@ -5,43 +5,43 @@ const express = require('express'),
 //movie catalogue
 let movies = [
   {
-    title: 'Enter the Void',
+    name: 'Enter the Void',
     director: 'Gaspar Noe'
   },
   {
-    title: 'The Matrix',
+    name: 'The Matrix',
     director: 'The Wachowskis'
   },
   {
-    title: 'Spirited Away',
+    name: 'Spirited Away',
     director: 'Hayao Miyazaki'
   },
   {
-    title: 'The Irishman',
+    name: 'The Irishman',
     director: 'Martin Scorsese'
   },
   {
-    title: 'Django Unchained',
+    name: 'Django Unchained',
     director: 'Quentin Tarantino'
   },
   {
-    title: 'Scarface',
+    name: 'Scarface',
     director: 'Brian De Palma'
   },
   {
-    title: 'The Beach',
+    name: 'The Beach',
     director: 'Danny Boyle'
   },
   {
-    title: 'Voley',
+    name: 'Voley',
     director: 'Martín Piroyansky'
   },
   {
-    title: 'The Godfather',
+    name: 'The Godfather',
     director: 'Francis Ford Coppola'
   },
   {
-    title: 'Wakolda',
+    name: 'Wakolda',
     director: 'Lucía Puenzo'
   }
 ];
