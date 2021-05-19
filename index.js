@@ -70,7 +70,7 @@ let genres = [
     },
 ];
 
-let users = [{}];
+let users = [];
 
 // GET requests
 app.get('/', (req, res) => {
