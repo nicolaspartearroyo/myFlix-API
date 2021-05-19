@@ -108,13 +108,13 @@ app.get('/directors/:name', (req, res) => {
 
 //Create New User
 app.post('/users', (req, res) => {
-  let newUser = req.body;
+  let username = req.body;
 
-if (!newUser.name) {
+if (!username.name) {
   const message = 'Missing name in request body';
   res.status(400).send(message);
 } else {
-  users.push(newUser);
+  users.push(username);
   res.status(201).send('User successfully created');
   }
 });
