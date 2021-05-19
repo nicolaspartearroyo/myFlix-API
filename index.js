@@ -126,14 +126,13 @@ app.put('/users/:username/favourites', (req, res) => {
 });
 
 //Delete
-app.delete('/users/:username/favourites/:movies',  (req, res) => {
+app.delete('/users/:username/favourites/:movies', (req, res) => {
   res.status(201).send('Movie was deleted');
 });
 
-app.delete('/users/:username',  (req, res) => {
+app.delete('/users/:username', (req, res) => {
   res.status(201).send('User was successfully deleted');
 });
-
 
 //
 app.use(express.static('public'));
