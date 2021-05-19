@@ -46,6 +46,30 @@ let movies = [
   }
 ];
 
+let directors = [
+  {
+    name : "Gaspar Noé",
+    bio : "Gaspar Noé is an Argentine filmmaker based in Paris, France. He is the son of Argentine painter, writer and intellectual Luis Felipe Noé.[3] He has directed five feature films: I Stand Alone (1998), Irréversible (2002), Enter the Void (2009), Love (2015), and Climax (2018).",
+    born : "December 27, 1963"
+  },
+  {
+    name : "Quentin Tarantino",
+    bio : "Quentin Tarantino is an American film director, screenwriter, producer, and actor. His films are characterized by nonlinear storylines, dark humor, aestheticization of violence, extended scenes of dialogue, ensemble casts, references to popular culture and a wide variety of other films, eclectic soundtracks primarily containing songs and score pieces from the 1960s to the 1980s, alternate history, and features of neo-noir film.",
+    born : "March 27, 1963"
+  },
+];
+
+let genres = [
+  {
+    name : "Experimental",
+    description : "Experimental film, experimental cinema, or avant-garde cinema is a mode of filmmaking that rigorously re-evaluates cinematic conventions and explores non-narrative forms or alternatives to traditional narratives or methods of working. Many experimental films, particularly early ones, relate to arts in other disciplines: painting, dance, literature and poetry, or arise from research and development of new technical resources. While some experimental films have been distributed through mainstream channels or even made within commercial studios, the vast majority have been produced on very low budgets with a minimal crew or a single person and are either self-financed or supported through small grants."
+  },
+  {
+    name: "Drama",
+    description : "Drama is a category of narrative fiction (or semi-fiction) intended to be more serious than humorous in tone. Drama of this kind is usually qualified with additional terms that specify its particular super-genre, macro-genre, or micro-genre, such as soap opera (operatic drama), police crime drama, political drama, legal drama, historical drama, domestic drama, teen drama, and comedy-drama (dramedy). These terms tend to indicate a particular setting or subject-matter, or else they qualify the otherwise serious tone of a drama with elements that encourage a broader range of moods.",
+    },
+];
+
 // GET requests
 app.get('/', (req, res) => {
   res.send('Welcome to myFlix!');
