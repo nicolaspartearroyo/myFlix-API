@@ -6,7 +6,10 @@ const express = require('express'),
 let movies = [
   {
     name: 'Enter the Void',
-    director: 'Gaspar Noe'
+    director: 'Gaspar Noe',
+    genre: 'Drama',
+    poster: 'https://en.wikipedia.org/wiki/Enter_the_Void#/media/File:Enter-the-void-poster.png',
+    url: 'https://en.wikipedia.org/wiki/Enter_the_Void'
   },
   {
     name: 'The Matrix',
@@ -120,7 +123,6 @@ app.put('/users/:username', (req, res) => {
   res.status(201).send('New information was successfully updated');
 });
 
-
 app.put('/users/:username/favourites', (req, res) => {
   res.status(201).send('Favourite movie was successfully updated');
 });
@@ -137,7 +139,6 @@ app.delete('/users/:username', (req, res) => {
 //
 app.use(express.static('public'));
 app.use(morgan('common'));
-
 
 //error handling
 app.use((err, req, res, next) => {
