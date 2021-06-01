@@ -1,0 +1,291 @@
+//Create Genres Collection
+var genre1 = {
+    Name: "Cyberpunk",
+    Description: "Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a combination of lowlife and high tech featuring advanced technological and scientific achievements, such as artificial intelligence and cybernetics, juxtaposed with a degree of breakdown or radical change in the social order. Much of cyberpunk is rooted in the New Wave science fiction movement of the 1960s and 1970s, when writers like Philip K. Dick, Roger Zelazny, John Brunner, J. G. Ballard, Philip José Farmer and Harlan Ellison examined the impact of drug culture, technology, and the sexual revolution while avoiding the utopian tendencies of earlier science fiction.",
+}
+db.genres.insertOne(genre1)
+ObjectId("60b10fc6b34edfb7d284b576")
+
+var genre2 = {
+    Name: "Anime",
+    Description: "Anime is hand-drawn and computer animation originating from Japan. Anime is a diverse medium with distinctive production methods that have adapted in response to emergent technologies. It combines graphic art, characterization, cinematography, and other forms of imaginative and individualistic techniques. Compared to Western animation, anime production generally focuses less on movement, and more on the detail of settings and use of camera effects, such as panning, zooming, and angle shots. Diverse art styles are used, and character proportions and features can be quite varied, with a common characteristic feature being large and emotive eyes.",
+}
+db.genres.insertOne(genre2)
+ObjectId("60b11095b34edfb7d284b577")
+
+var genre3 = {
+    Name: "Crime",
+    Description: "Crime films, in the broadest sense, is a film genre inspired by and analogous to the crime fiction literary genre. Films of this genre generally involve various aspects of crime and its detection. Stylistically, the genre may overlap and combine with many other genres, such as drama or gangster film, but also include comedy, and, in turn, is divided into many sub-genres, such as mystery, suspense or noir.",
+}
+db.genres.insertOne(genre3)
+ObjectId("60b110d8b34edfb7d284b578")
+
+var genre4 = {
+    Name: "Western",
+    Description: "Western is a genre of fiction set primarily in the latter half of the 19th and early 20th century in the Western United States, which is styled the Old West. Its stories commonly center on the life of a nomadic cowboy or gunfighter who rides a horse and is armed with a revolver and/or a rifle. Cowboys and gunslingers typically wear broad-brimmed and high-crowned Stetson hats, neckerchief bandannas, vests, spurs, cowboy boots, and buckskins (alternatively dusters). Recurring characters include the aforementioned cowboys, Indians, Spaniards, Mexicans, bandits, lawmen, prostitutes, bounty hunters, outlaws, gamblers, soldiers (especially mounted cavalry, such as buffalo soldiers), and settlers (farmers, ranchers, and townsfolk). The ambience is usually punctuated with a western music score, including American and Spanish/Mexican folk music such as country, Native American music, New Mexico music, and rancheras.",
+}
+db.genres.insertOne(genre4)
+ObjectId("60b11108b34edfb7d284b579")
+
+var genre5 = {
+    Name: "Comedy",
+    Description: "Comedy is a genre of fiction consisting of discourses or works intended to be humorous or amusing by inducing laughter, especially in theatre, film, stand-up comedy, television, radio, books, or any other entertainment medium. The term originated in Ancient Greece: in Athenian democracy, the public opinion of voters was influenced by political satire performed by comic poets in theaters. The theatrical genre of Greek comedy can be described as a dramatic performance pitting two groups, ages, genders, or societies against each other in an amusing agon or conflict. A revised view characterizes the essential agon of comedy as a struggle between a relatively powerless youth and the societal conventions posing obstacles to his hopes. In this struggle, the youth then becomes constrained by his lack of social authority, and is left with little choice but to resort to ruses which engender dramatic irony, which provokes laughter.",
+}
+db.genres.insertOne(genre5)
+ObjectId("60b1114fb34edfb7d284b57a")
+
+var genre6 = {
+    Name: "Drama",
+    Description: "Drama is a category of narrative fiction (or semi-fiction) intended to be more serious than humorous in tone. Drama of this kind is usually qualified with additional terms that specify its particular super-genre, macro-genre, or micro-genre, such as soap opera (operatic drama), police crime drama, political drama, legal drama, historical drama, domestic drama, teen drama, and comedy-drama (dramedy). These terms tend to indicate a particular setting or subject-matter, or else they qualify the otherwise serious tone of a drama with elements that encourage a broader range of moods.",
+}
+db.genres.insertOne(genre6)
+ObjectId("60b1117ab34edfb7d284b57b")
+
+//Create Directors Collection
+var director1 = {
+    Name: "Gaspar Noé",
+    Bio: "Gaspar Noé is an Argentine filmmaker based in Paris, France. He is the son of Argentine painter, writer and intellectual Luis Felipe Noé. He has directed five feature films: I Stand Alone (1998), Irréversible (2002), Enter the Void (2009), Love (2015), and Climax (2018).",
+    Birthdate: "1963-12-27"
+}
+db.directors.insertOne(director1)
+ObjectId("60b11257b34edfb7d284b57c")
+
+var director2 = {
+    Name: "The Wachowskis",
+    Bio: "Lana Wachowski and Lilly Wachowski are American film and television directors, writers and producers. The sisters are both trans women. Collectively known as the Wachowskis, the sisters have worked as a writing and directing team through most of their careers. They made their directing debut in 1996 with Bound, and achieved fame with their second film The Matrix (1999), a major box office success for which they won the Saturn Award for Best Director. They wrote and directed its two sequels: The Matrix Reloaded and The Matrix Revolutions (both in 2003), and were involved in the writing and production of other works in Matrix franchise. Following the commercial success of the Matrix series, the Wachowskis wrote and produced the 2005 film V for Vendetta (an adaptation of the graphic novel by Alan Moore & David Lloyd), and in 2008 released the film Speed Racer, a live-action adaptation of the Japanese anime series. Their next film, Cloud Atlas, based on the novel by David Mitchell and co-written and co-directed by Tom Tykwer, was released in 2012. Their film Jupiter Ascending and the Netflix series Sense8, which they co-created with J. Michael Straczynski, debuted in 2015; the second season of Sense8 ended the series in 2018 and was Lana's first major creative undertaking without Lilly. Since the series finale of Sense8, the Wachowskis have been working separately on different projects: Lilly is writing and executive-producing Showtime's Work in Progress (2019) with creators Abby McEnany and Tim Mason, while Lana is filming a fourth Matrix film planned for 2021, which she wrote with Mitchell and Aleksandar Hemon.",
+    Birthdate: [ "1965-06-21", "1967-12-29" ]
+}
+db.directors.insertOne(director2)
+ObjectId("60b113c1b34edfb7d284b57f")
+
+var director3 = {
+    Name: "Hayao Miyazaki",
+    Bio: "Hayao Miyazaki is a Japanese animator, director, producer, screenwriter, author, and manga artist. A co-founder of Studio Ghibli, a film and animation studio, he has attained international acclaim as a masterful storyteller and as a maker of animated feature films, and is widely regarded as one of the most accomplished filmmakers in the history of animation. Born in Bunkyō ward of Tokyo, Miyazaki expressed interest in manga and animation from an early age, and he joined Toei Animation in 1963. Miyazaki co-founded Studio Ghibli in 1985. He directed numerous films with Ghibli, including Castle in the Sky (1986), My Neighbor Totoro (1988), Kiki's Delivery Service (1989), and Porco Rosso (1992). The films were met with critical and commercial success in Japan. Miyazaki's film Princess Mononoke was the first animated film ever to win the Japan Academy Prize for Picture of the Year, and briefly became the highest-grossing film in Japan following its release in 1997; its distribution to the Western world greatly increased Ghibli's popularity and influence outside Japan. His 2001 film Spirited Away became the highest-grossing film in Japanese history, winning the Academy Award for Best Animated Feature at the 75th Academy Awards, and is frequently ranked among the greatest films of the 2000s. Miyazaki's later films—Howl's Moving Castle (2004), Ponyo (2008), and The Wind Rises (2013)—also enjoyed critical and commercial success. Following the release of The Wind Rises, Miyazaki announced his retirement from feature films, though he returned to work on the upcoming feature film How Do You Live? in 2016.",
+    Birthdate: "1941-01-05"
+}
+db.directors.insertOne(director3)
+ObjectId("60b1141fb34edfb7d284b580")
+
+var director4 = {
+    Name: "Martin Scorsese",
+    Bio: "Martin Charles Scorsese is an American film director, producer, screenwriter, and actor. One of the major figures of the New Hollywood era, he is widely regarded as one of the most significant and influential directors in film history. Scorsese's body of work explores themes such as Italian-American identity, Catholic concepts of guilt and redemption, faith, machismo, nihilism, crime and sectarianism. Many of his films are known for their depiction of violence and the liberal use of profanity. Scorsese has also dedicated his life to film preservation and film restoration by founding the nonprofit organization The Film Foundation in 1990, as well as the World Cinema Foundation in 2007 and the African Film Heritage Project in 2017",
+    Birthdate: "1942-01-17"
+}
+db.directors.insertOne(director4)
+ObjectId("60b11464b34edfb7d284b581")
+
+var director5 = {
+    Name: "Quentin Tarantino",
+    Bio: "Quentin Tarantino is an American film director, screenwriter, producer, and actor. His films are characterized by nonlinear storylines, dark humor, aestheticization of violence, extended scenes of dialogue, ensemble casts, references to popular culture and a wide variety of other films, eclectic soundtracks primarily containing songs and score pieces from the 1960s to the 1980s, alternate history, and features of neo-noir film.",
+    Birthdate: "1963-03-27"
+}
+db.directors.insertOne(director5)
+ObjectId("60b114a1b34edfb7d284b582")
+
+var director6 = {
+    Name: "Brian De Palma",
+    Bio: "Brian Russell De Palma is an American film director and screenwriter. With a career spanning over 50 years, he is best known for his work in the suspense, crime and psychological thriller genres. His prominent films include mainstream box office hits such as Carrie (1976), Dressed to Kill (1980), Scarface (1983), The Untouchables (1987), and Mission: Impossible (1996), as well as cult favorites such as Sisters (1972), Phantom of the Paradise (1974), Blow Out (1981), Body Double (1984), Casualties of War (1989), Carlito's Way (1993), and Femme Fatale (2002). De Palma is often cited as a leading member of the New Hollywood generation of film directors. His directing style often makes use of quotations from other films or cinematic styles, and bears the influence of filmmakers such as Alfred Hitchcock and Jean-Luc Godard. His films have been criticised for their violence and sexual content but have also been championed by prominent American critics such as Roger Ebert and Pauline Kael.",
+    Birthdate: "1940-09-11"
+}
+db.directors.insertOne(director6)
+ObjectId("60b11506b34edfb7d284b583")
+
+var director7 = {
+    Name: "Francis Ford Coppola",
+    Bio: "Francis Ford Coppola is an American film director, producer and screenwriter. He was a central figure in the New Hollywood filmmaking movement of the 1960s and 1970s, and is widely considered to be one of the greatest filmmakers of all time. His accolades include five Academy Awards, six Golden Globe Awards, two Palmes d'Or, and a British Academy Film Award. After directing The Rain People in 1969, Coppola co-wrote Patton (1970), earning the Academy Award for Best Original Screenplay along with Edmund H. North. Coppola's reputation as a filmmaker was cemented with the release of The Godfather (1972). The film revolutionized movie-making in the gangster genre[6] and was adored by the public and critics alike. The Godfather won three Academy Awards: Best Picture, Best Actor, and Best Adapted Screenplay (shared with Mario Puzo). The Godfather Part II, which followed in 1974, became the first sequel to win the Academy Award for Best Picture. Highly regarded by critics, the film brought Coppola three more Academy Awards: Best Adapted Screenplay, Best Director, and Best Picture, and made him the second director (after Billy Wilder) to be so honored three times for the same film. The Conversation, which Coppola directed, produced and wrote, was released that same year, winning the Palme d'Or at the Cannes Film Festival. His next film, Apocalypse Now (1979), which notoriously had a lengthy and strenuous production, was widely acclaimed for its vivid depiction of the Vietnam War. The film won the Palme d'Or, making Coppola one of only eight filmmakers to have won that award twice.",
+    Birthdate: "1939-04-07"
+}
+db.directors.insertOne(director7)
+ObjectId("60b11533b34edfb7d284b584")
+
+var director8 = {
+    Name: "Martín Piroyansky",
+    Bio: "Martín Piroyansky is an Argentine actor and film director. He appeared in more than forty films since 1998.",
+    Birthdate: "1986-03-03"
+}
+db.directors.insertOne(director8)
+ObjectId("60b11567b34edfb7d284b585")
+
+var director9 = {
+    Name: "Danny Boyle",
+    Bio: "Daniel Francis Boyle is an English film, television, and stage director and producer. He is known for his work on films including Shallow Grave, Trainspotting and its sequel T2 Trainspotting, The Beach, 28 Days Later, Sunshine, Slumdog Millionaire, 127 Hours, Steve Jobs and Yesterday. His debut film Shallow Grave won the BAFTA Award for Best British Film. The British Film Institute ranked Trainspotting the 10th greatest British film of the 20th century. Boyle's 2008 film Slumdog Millionaire, the most successful British film of the decade, was nominated for ten Academy Awards and won eight, including the Academy Award for Best Director. He also won the Golden Globe and BAFTA Award for Best Director. Boyle was presented with the Extraordinary Contribution to Filmmaking Award at the 2008 Austin Film Festival, where he also introduced that year's AFF Audience Award Winner Slumdog Millionaire. In 2012, Boyle was the artistic director for Isles of Wonder, the opening ceremony of the 2012 Summer Olympics. He was subsequently offered a knighthood as part of the New Year Honours but declined due to his republican beliefs. In 2014, it was announced that Boyle would become a patron of HOME in Manchester.",
+    Birthdate: "1956-10-20"
+}
+db.directors.insertOne(director9)
+ObjectId("60b11598b34edfb7d284b586")
+
+var director10 = {
+    Name: "Lucía Puenzo",
+    Bio: "Lucía Puenzo is an Argentine author, screenwriter and film director. She is the daughter of the Oscar-winning film director, producer, and screenplay writer, Luis Puenzo.",
+    Birthdate: "1976-11-28"
+}
+db.directors.insertOne(director10)
+ObjectId("60b115d2b34edfb7d284b587")
+
+
+//Create Movies Collection
+var movie1 = {
+    Title: "Enter the Void",
+    Description: "Tokyo's nasty underside, seen primarily through the eyes of Oscar, a heavy drug user, whose sister Linda is a stripper. Oscar also has flashbacks to his childhood when trauma upends the siblings. Oscar's drug-fed hallucinations alter Tokyo's already-disconcerting nights, and after the police shoot him, he can float above and look down: on his sister's sorrow, on the rooms of a love hotel, and on life at even a molecular level. The spectrum's colors can be beautiful; it's people's colorless lives that can be ugly. And what of afterlife, is there more than a void?",
+    Genre: [ObjectId("60b1117ab34edfb7d284b57b")],
+    Director: [ObjectId("60b11257b34edfb7d284b57c")],
+    ImageURL: "https://m.media-amazon.com/images/M/MV5BMGQwMWRmODEtYzYwMy00MzFiLWJhYWUtNWNkNWM0NWZhODBiXkEyXkFqcGdeQXVyNjQyMjcwNDM@._V1_FMjpg_UY720_.jpg",
+    Featured: true
+}
+db.movies.insertOne(movie1)
+ObjectId("60b112a2b34edfb7d284b57e")
+
+var movie2 = {
+    Title: "The Matrix",
+    Description: "Thomas A. Anderson is a man living two lives. By day he is an average computer programmer and by night a hacker known as Neo. Neo has always questioned his reality, but the truth is far beyond his imagination. Neo finds himself targeted by the police when he is contacted by Morpheus, a legendary computer hacker branded a terrorist by the government. As a rebel against the machines, Neo must confront the agents: super-powerful computer programs devoted to stopping Neo and the entire human rebellion.",
+    Genre: [ObjectId("60b10fc6b34edfb7d284b576")],
+    Director: [ObjectId("60b113c1b34edfb7d284b57f")],
+    ImageURL: "https://m.media-amazon.com/images/M/MV5BNzQzOTk3OTAtNDQ0Zi00ZTVkLWI0MTEtMDllZjNkYzNjNTc4L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_FMjpg_UY721_.jpg",
+    Featured: true
+}
+db.movies.insertOne(movie2)
+ObjectId("60b1161bb34edfb7d284b588")
+
+var movie3 = {
+    Title: "Spirited Away",
+    Description: "Chihiro and her parents are moving to a small Japanese town in the countryside, much to Chihiro's dismay. On the way to their new home, Chihiro's father makes a wrong turn and drives down a lonely one-lane road which dead-ends in front of a tunnel. Her parents decide to stop the car and explore the area. They go through the tunnel and find an abandoned amusement park on the other side, with its own little town. When her parents see a restaurant with great-smelling food but no staff, they decide to eat and pay later. However, Chihiro refuses to eat and decides to explore the theme park a bit more. She meets a boy named Haku who tells her that Chihiro and her parents are in danger, and they must leave immediately. She runs to the restaurant and finds that her parents have turned into pigs. In addition, the theme park turns out to be a town inhabited by demons, spirits, and evil gods. At the center of the town is a bathhouse where these creatures go to relax. The owner of the bathhouse.",
+    Genre: [ObjectId("60b11095b34edfb7d284b577")],
+    Director: [ObjectId("60b113c1b34edfb7d284b57f")],
+    ImageURL: "https://m.media-amazon.com/images/M/MV5BMjlmZmI5MDctNDE2YS00YWE0LWE5ZWItZDBhYWQ0NTcxNWRhXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_FMjpg_UY720_.jpg",
+    Featured: true
+}
+db.movies.insertOne(movie3)
+ObjectId("60b116e0b34edfb7d284b589")
+
+var movie4 = {
+    Title: "The Irishman",
+    Description: "Frank The Irishman Sheeran is a man with a lot on his mind. The former labor union high official and hitman, learned to kill serving in Italy during the Second World War. He now looks back on his life and the hits that defined his mob career, maintaining connections with the Bufalino crime family. In particular, the part he claims to have played in the disappearance of his life-long friend, Jimmy Hoffa, the former president of the International Brotherhood of Teamsters, who mysteriously vanished in late July 1975 at the age of 62.",
+    Genre: [ObjectId("60b110d8b34edfb7d284b578")],
+    Director: [ObjectId("60b11464b34edfb7d284b581")],
+    ImageURL: "https://m.media-amazon.com/images/M/MV5BMGUyM2ZiZmUtMWY0OC00NTQ4LThkOGUtNjY2NjkzMDJiMWMwXkEyXkFqcGdeQXVyMzY0MTE3NzU@._V1_FMjpg_UY720_.jpg",
+    Featured: true
+}
+db.movies.insertOne(movie4)
+ObjectId("60b1178bb34edfb7d284b58a")
+
+var movie5 = {
+    Title: "Django Unchained",
+    Description: "In 1858, a bounty-hunter named King Schultz seeks out a slave named Django and buys him because he needs him to find some men he is looking for. After finding them, Django wants to find his wife, Broomhilda, who along with him were sold separately by his former owner for trying to escape. Schultz offers to help him if he chooses to stay with him and be his partner. Eventually they learn that she was sold to a plantation in Mississippi. Knowing they can't just go in and say they want her, they come up with a plan so that the owner will welcome them into his home and they can find a way.",
+    Genre: [ObjectId("60b11108b34edfb7d284b579"), ObjectId("60b110d8b34edfb7d284b578")],
+    Director: [ObjectId("60b114a1b34edfb7d284b582")],
+    ImageURL: "https://m.media-amazon.com/images/M/MV5BMjIyNTQ5NjQ1OV5BMl5BanBnXkFtZTcwODg1MDU4OA@@._V1_FMjpg_UY720_.jpg",
+    Featured: true
+}
+db.movies.insertOne(movie5)
+ObjectId("60b11805b34edfb7d284b58b")
+
+var movie6 = {
+    Title: "Scarface",
+    Description: "Tony Montana manages to leave Cuba during the Mariel exodus of 1980. He finds himself in a Florida refugee camp but his friend Manny has a way out for them: undertake a contract killing and arrangements will be made to get a green card. He's soon working for drug dealer Frank Lopez and shows his mettle when a deal with Colombian drug dealers goes bad. He also brings a new level of violence to Miami. Tony is protective of his younger sister but his mother knows what he does for a living and disowns him. Tony is impatient and wants it all however, including Frank's empire and his mistress Elvira Hancock. Once at the top however, Tony's outrageous actions make him a target and everything comes crumbling down.",
+    Genre: [ObjectId("60b110d8b34edfb7d284b578"), ObjectId("60b1117ab34edfb7d284b57b")],
+    Director: [ObjectId("60b11506b34edfb7d284b583")],
+    ImageURL: "https://m.media-amazon.com/images/M/MV5BNjdjNGQ4NDEtNTEwYS00MTgxLTliYzQtYzE2ZDRiZjFhZmNlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_FMjpg_UX1000_.jpg",
+    Featured: true
+}
+db.movies.insertOne(movie6)
+ObjectId("60b118afb34edfb7d284b58c")
+
+var movie7 = {
+    Title: "The Beach",
+    Description: "Garland's novel centers on a young nicotine-addicted traveler named Richard, an avid pop-culture buff with a particular love for video games and Vietnam War movies. While at a hotel in Bangkok, he finds a map left by his strange, whacked-out neighbor, who just committed suicide. The map supposedly leads to a legendary island paradise where some other wayward souls have settled.",
+    Genre: [ObjectId("60b1117ab34edfb7d284b57b")],
+    Director: [ObjectId("60b11598b34edfb7d284b586")],
+    ImageURL: "https://m.media-amazon.com/images/M/MV5BNTljZTUzYWUtOTI4YS00NmZlLWE5MmQtZjFlZDZhNjg4MjQxXkEyXkFqcGdeQXVyNTc1NTQxODI@._V1_FMjpg_UX580_.jpg",
+    Featured: true
+}
+db.movies.insertOne(movie7)
+ObjectId("60b119c4b34edfb7d284b58d")
+
+var movie8 = {
+    Title: "The Godfather",
+    Description: "The Godfather Don Vito Corleone is the head of the Corleone mafia family in New York. He is at the event of his daughter's wedding. Michael, Vito's youngest son and a decorated WW II Marine is also present at the wedding. Michael seems to be uninterested in being a part of the family business. Vito is a powerful man, and is kind to all those who give him respect but is ruthless against those who do not. But when a powerful and treacherous rival wants to sell drugs and needs the Don's influence for the same, Vito refuses to do it. What follows is a clash between Vito's fading old values and the new ways which may cause Michael to do the thing he was most reluctant in doing and wage a mob war against all the other mafia families which could tear the Corleone family apart.",
+    Genre: [ObjectId("60b110d8b34edfb7d284b578"), ObjectId("60b1117ab34edfb7d284b57b")],
+    Director: [ObjectId("60b11533b34edfb7d284b584")],
+    ImageURL: "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_FMjpg_UY720_.jpg",
+    Featured: true
+}
+db.movies.insertOne(movie8)
+ObjectId("60b11a65b34edfb7d284b58e")
+
+var movie9 = {
+    Title: "Wakolda",
+    Description: "Patagonia, 1960. A German doctor (Alex Brendemühl) meets an Argentinean family and follows them on a long desert road to a small town where the family will be starting a new life. Eva (Natalia Oreiro), Enzo (Diego Peretti) and their three children welcome the doctor into their home and entrust their young daughter, Lilith (Florencia Bado), to his care, not knowing that they are harboring one of the most dangerous criminals in the world. At the same time, Israeli agents are desperately looking to bring THE GERMAN DOCTOR to justice. Based on filmmaker Lucía Puenzo's (XXY) fifth novel, the story follows Josef Mengele, the Angel of Death, a German SS officer and a physician at the Auschwitz concentration camp, in the years he spent hiding, along with many other Nazi's, in South America following his escape from Germany. Mengele was considered to be one of WWII's most heinous Nazi war criminals.",
+    Genre: [ObjectId("60b1117ab34edfb7d284b57b")],
+    Director: [ObjectId("60b115d2b34edfb7d284b587")],
+    ImageURL: "https://m.media-amazon.com/images/M/MV5BMTY1NDQ2NzMyMF5BMl5BanBnXkFtZTgwODI5ODUwMTE@._V1_FMjpg_UY720_.jpg",
+    Featured: true
+}
+db.movies.insertOne(movie9)
+ObjectId("60b11ad5b34edfb7d284b58f")
+
+var movie10 = {
+    Title: "Pulp Fiction",
+    Description: "Jules Winnfield (Samuel L. Jackson) and Vincent Vega (John Travolta) are two hit men who are out to retrieve a suitcase stolen from their employer, mob boss Marsellus Wallace (Ving Rhames). Wallace has also asked Vincent to take his wife Mia (Uma Thurman) out a few days later when Wallace himself will be out of town. Butch Coolidge (Bruce Willis) is an aging boxer who is paid by Wallace to lose his fight. The lives of these seemingly unrelated people are woven together comprising of a series of funny, bizarre and uncalled-for incidents.",
+    Genre: [ObjectId("60b110d8b34edfb7d284b578"), ObjectId("60b1117ab34edfb7d284b57b")],
+    Director: [ObjectId("60b114a1b34edfb7d284b582")],
+    ImageURL: "https://m.media-amazon.com/images/M/MV5BNGNhMDIzZTUtNTBlZi00MTRlLWFjM2ItYzViMjE3YzI5MjljXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_FMjpg_UX1055_.jpg",
+    Featured: true
+}
+db.movies.insertOne(movie10)
+ObjectId("60b11b48b34edfb7d284b590")
+
+//Create Users
+var user1 = {
+    name: "Nicolas Partearroyo",
+    username: "nicolaspartearroyo",
+    password: "ABC123", 
+    email: "nicolaspartearroyo@gmail.com",
+    birthdate: "1990-06-26",
+    favoriteMovies: [ObjectId("60b11b48b34edfb7d284b590"), ObjectId("60b118afb34edfb7d284b58c")]
+}
+db.users.insertOne(user1)
+ObjectId("60b11ca3b34edfb7d284b591")
+
+var user2 = {
+    name: "Suki",
+    username: "sukithedoggie",
+    password: "123ABC", 
+    email: "sukithedoggie@gmail.com",
+    birthdate: "2021-07-01",
+    favoriteMovies: [ObjectId("60b116e0b34edfb7d284b589")]
+}
+db.users.insertOne(user2)
+ObjectId("60b11ceeb34edfb7d284b592")
+
+var user3 = {
+    name: "Zuzanna Jeske",
+    username: "zuzannajeske",
+    password: "123456", 
+    email: "zuzannajeske@gmail.com",
+    birthdate: "1989-05-08",
+    favoriteMovies: [ObjectId("60b119c4b34edfb7d284b58d"), ObjectId("60b11ad5b34edfb7d284b58f")]
+}
+db.users.insertOne(user3)
+ObjectId("60b11d39b34edfb7d284b593")
+
+var user4 = {
+    name: "Christian Hunter",
+    username: "peter",
+    password: "123456ABC", 
+    email: "peterhunter@gmail.com",
+    birthdate: "1980-02-18",
+    favoriteMovies: [ObjectId("60b1178bb34edfb7d284b58a")]
+}
+db.users.insertOne(user4)
+ObjectId("60b11d7eb34edfb7d284b594")
+
+var user5 = {
+    name: "Rodrigo Bueno",
+    username: "energizer123",
+    password: "123Manija", 
+    email: "remanija@gmail.com",
+    birthdate: "1987-08-18",
+    favoriteMovies: [ObjectId("60b11b48b34edfb7d284b590"), ObjectId("60b112a2b34edfb7d284b57e"), ObjectId("60b1178bb34edfb7d284b58a")]
+}
+db.users.insertOne(user5)
+ObjectId("60b11e01b34edfb7d284b595")

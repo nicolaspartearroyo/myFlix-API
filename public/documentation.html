@@ -48,80 +48,139 @@
       <td>Welcome to my movies suggestion! message</td>
     </tr>
     <tr>
-      <td>Get a list of movies</td>
+      <td>Get all movies</td>
       <td>/movies</td>
       <td>GET</td>
       <td>none</td>
-      <td>A JSON object holding list of all the movies</td>
+      <td>A JSON object holding list of all the movies. Example:<br>
+        {<br>
+          _id: "1",<br>
+          Title: "Enter the Void",<br>
+          Description: "Tokyo's nasty underside...",<br>
+          Genre: [ObjectId],<br>
+          Director: [ObjectId],<br>
+          ImageURL: "imgURL",<br>
+          Featured: true<br>
+      },
     </tr>
     <tr>
-      <td>Get data about movie by title</td>
-      <td>/movies/[name]</td>
+      <td>Get movie by movie title</td>
+      <td>/movies/:Title</td>
       <td>GET</td>
       <td>none</td>
-      <td>A JSON object holding description, genre, director and image URL of the movie requested</td>
+      <td>A JSON object holding description, genre, director and image URL of the movie requested. Example:<br>
+        {<br>
+          _id: "1",<br>
+          Title: "Enter the Void",<br>
+          Description: "Tokyo's nasty underside...",<br>
+          Genre: [ObjectId],<br>
+          Director: [ObjectId],<br>
+          ImageURL: "imgURL",<br>
+          Featured: true<br>
+      }</td>
     </tr>
     <tr>
-      <td>Get list of genres</td>
+      <td>Get all genres</td>
       <td>/genres</td>
       <td>GET</td>
       <td>none</td>
-      <td>A JSON object holding a list of genres</td>
+      <td>A JSON object holding a list of genres. Example:<br>
+        {<br>
+          "_id": "01",<br>
+          "Name": "Cyberpunk",<br>
+          "Description": "Cyberpunk is..."<br>
+      },</td>
     </tr>
     <tr>
-      <td>Get description about a genere by genre name</td>
-      <td>/genres/[name]</td>
+      <td>Get data about a genere by genre name</td>
+      <td>//genres/:Name</td>
       <td>GET</td>
       <td>none</td>
-      <td>A JSON object holding description of a movie genre requested by genre name</td>
+      <td>A JSON object holding description of a movie genre requested by genre name. Example:<br>
+        {<br>
+          "_id": "01",<br>
+          "Name": "Cyberpunk",<br>
+          "Description": "Cyberpunk is..."<br>
+      }</td>
     </tr>
     <tr>
-      <td>Get list of directors</td>
+      <td>Get all directors</td>
       <td>/directors</td>
       <td>GET</td>
       <td>none</td>
-      <td>A JSON object holding director's names</td>
+      <td>A JSON object holding a list of directors. Example:<br>
+        {<br>
+          "_id": "01",<br>
+          "Name": "Gaspar Noé",<br>
+          "Bio": "Gaspar Noé is a...",<br>
+          "Birthdate": "1963-12-27"<br>
+      },</td>
     </tr>
     <tr>
-      <td>Get data about director by director's name</td>
-      <td>/directors/[name]</td>
+      <td>Get data about a specific director by director's name.</td>
+      <td>/directors/:Name</td>
       <td>GET</td>
       <td>none</td>
-      <td>A JSON object holding bio, birth year and death year of th requested director</td>
+      <td>A JSON object holding bio and birth year of the requested director. Example:<br>
+        {<br>
+          "_id": "01",<br>
+          "Name": "Gaspar Noé",<br>
+          "Bio": "Gaspar Noé is a...",<br>
+          "Birthdate": "1963-12-27"<br>
+      }</td>
     </tr>
     <tr>
       <td>Add new user</td>
       <td>/users</td>
       <td>POST</td>
-      <td>A JSON object holding data about the user</td>
+      <td>A JSON object holding data about the user, containing at least username, email and password. Example:
+        <br>{ <br>
+          Username: "example", <br>
+          Password: "1234", <br>
+          Email: "example@demo.com", <br>
+          Birthday: "1990-01-21" <br>
+        } </td>
       <td>A message indicating the new user was successfully created</td>
     </tr>
     <tr>
       <td>Update user information</td>
-      <td>/users/[username]</td>
+      <td>/users/:Username</td>
       <td>PUT</td>
-      <td>A JSON object holding new data about the user</td>
+      <td>A JSON object holding updated data about the user. Example:
+        <br>{ <br>
+          Username: "example", <br>
+          Password: "ABC", <br>
+          Email: "example@demo.com", <br>
+          Birthday: "1990-01-21" <br>
+        } </td>
       <td>A message indicating new information was successfully updated</td>
     </tr>
     <tr>
-      <td>Add a movie to their list of favorites</td>
-      <td>/users/[username]/favourites</td>
-      <td>PUT</td>
-      <td>none</td>
+      <td>Add a movie to user's favorites</td>
+      <td>/users/:Username/movies/:MovieID</td>
+      <td>POST</td>
+      <td>A JSON object holding username and MovieID. Example:<br>
+        Username: "example",<br>
+        FavoriteMovies: "01"</td>
       <td>A message indicating the movie was successfully added</td>
     </tr>
     <tr>
-      <td>Remove a movie from their list of favorites</td>
-      <td>/users/[username]/favourites</td>
+      <td>Remove a movie from user's favorites</td>
+      <td>/users/:Username/movies/:FavoriteMovies</td>
       <td>DELETE</td>
       <td>none</td>
       <td>A message indicating the movie has been removed</td>
     </tr>
     <tr>
       <td>Allow existing users to deregister</td>
-      <td>/users/[username]</td>
+      <td>/users/:username</td>
       <td>DELETE</td>
-      <td>none</td>
+      <td>A JSON objetc holding username, password and email for remove the user. Example:<br>
+        {<br>
+          "Username" : "nicolaspartearroyo",<br>
+          "Password" : "pepe123",<br>
+          "Email" : "nicolaspartearroyo@gmail.com"<br>
+        }</td>
       <td>A message indicating user email has been removed</td>
     </tr>
   </table>
