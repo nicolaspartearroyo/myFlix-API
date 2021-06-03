@@ -12,7 +12,12 @@ const bodyParser = require('body-parser');
 const express = require('express'),
   morgan = require('morgan'),
   app = express();
-  app.use(bodyParser.json());
+app.use(bodyParser.json());
+  
+let auth = require('./auth')(app);
+
+const passport = require('passport');
+require('./passport');
 
 //home welcome message 
 app.get('/', (req, res) => {
@@ -20,7 +25,7 @@ res.send('Welcome to myFlix!');
 });
 
 //// GET all movies
-app.get('/movies', (req, res) => {
+app.get('/movies', passport.authenticate('jwt', {session: false}), (req, res) => {
   Movies.find()
     .then((movies) => {
       res.status(201).json(movies);
