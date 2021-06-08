@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Models = require('./models.js');
-const corse = require('corse');
-app.use(corse());
+const cors = require('cors');
+app.use(cors());
 const { check, validationResult } = require('express-validator');
 
 const Movies = Models.Movie;
