@@ -1,5 +1,8 @@
 const mongoose = require('mongoose');
 const Models = require('./models.js');
+const corse = require('corse');
+app.use(corse());
+const { check, validationResult } = require('express-validator');
 
 const Movies = Models.Movie;
 const Users = Models.User;
@@ -49,7 +52,17 @@ app.get('/movies/:Title', (req, res) => {
 });
 
 //Create New User
-app.post('/users', (req, res) => {
+app.post('/users', [
+  check('Username', 'Username is required').isLength({ min: 5 }),
+  check('Username', 'Username contains non alphanumeric characters - not allowed.').isAlphanumeric(),
+  check('Password', 'Password is required').not().isEmpty(),
+  check('Email', 'Email does not appear to be valid').isEmail()
+], (req, res) => {
+  let errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(422).json({ errors: errors.array() });
+  }
+  let hashedPassword = User.hashedPassword(req.body.Password);
   Users.findOne({ Username: req.body.Username })
     .then((user) => {
   if (user) {
@@ -58,7 +71,7 @@ app.post('/users', (req, res) => {
     Users
       .create({
         Username: req.body.Username,
-        Password: req.body.Password,
+        Password: hashedPassword,
         Email: req.body.Email,
         Birthday: req.body.Birthday
       })
@@ -225,52 +238,6 @@ app.get('/genres/:Name', (req, res) => {
 //   res.sendFile('public/documentation.html', { root: __dirname });
 // });
 
-// app.get('/movies', (req, res) => {
-//   res.json(movies);
-// });
-
-// app.get('/movies/:name', (req, res) => {
-//   res.json(movies.find((movies) =>
-//   { return movies.name === req.params.name }));
-// });
-
-// app.get('/genres', (req, res) => {
-//   res.json(genres);
-// });
-
-// app.get('/genres/:name', (req, res) => {
-//   res.json(genres.find((genres) =>
-//   { return genres.name === req.params.name }));
-// });
-
-// app.get('/directors', (req, res) => {
-//   res.json(directors);
-// });
-
-// app.get('/directors/:name', (req, res) => {
-//   res.json(directors.find((directors) =>
-//   { return directors.name === req.params.name }));
-// });
-
-// //Updates user information and favourites movies. Not sure how to work with PUT!!!
-// app.put('/users/:username', (req, res) => {
-//   res.status(201).send('New information was successfully updated');
-// });
-
-// app.put('/users/:username/favourites', (req, res) => {
-//   res.status(201).send('Favourite movie was successfully updated');
-// });
-
-// //Delete
-// app.delete('/users/:username/favourites/:movies', (req, res) => {
-//   res.status(201).send('Movie was deleted');
-// });
-
-// app.delete('/users/:username', (req, res) => {
-//   res.status(201).send('User was successfully deleted');
-// });
-
-//
 app.use(express.static('public'));
 app.use(morgan('common'));
 
@@ -281,6 +248,7 @@ app.use(morgan('common'));
 // });
 
 // listen for requests
-app.listen(8080, () => {
-  console.log('Your app is listening on port 8080.');
-});
+const port = process.env.PORT || 8080;
+app.listen(port, '0.0.0.0',() => {
+ console.log('Listening on Port ' + port);
+})
