@@ -1,7 +1,10 @@
 const mongoose = require('mongoose');
 const Models = require('./models.js');
 const cors = require('cors');
-app.use(cors());
+
+const passport = require('passport');
+require('./passport');
+
 const { check, validationResult } = require('express-validator');
 
 const Movies = Models.Movie;
@@ -19,8 +22,18 @@ app.use(bodyParser.json());
   
 let auth = require('./auth')(app);
 
-const passport = require('passport');
-require('./passport');
+let allowedOrigins = ['http://localhost:8080', 'https://git.heroku.com/myflixbypartearroyo.git'];
+app.use(cors({
+    origin: (origin, callback) => {
+        if (!origin) return callback(null, true);
+        if (allowedOrigins.indexOf(origin) === -1) {
+            let message = 'The CORS policy for this application does not allow access from the origin'
+        origin;
+            return callback(new Error(message), false);
+        }
+        return callback(null, true);
+    }
+}));
 
 //home welcome message 
 app.get('/', (req, res) => {
