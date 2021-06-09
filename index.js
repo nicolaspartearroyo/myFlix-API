@@ -23,18 +23,20 @@ app.use(bodyParser.json());
   
 let auth = require('./auth')(app);
 
-let allowedOrigins = ['http://localhost:8080', 'https://git.heroku.com/myflixbypartearroyo.git'];
-app.use(cors({
-    origin: (origin, callback) => {
-        if (!origin) return callback(null, true);
-        if (allowedOrigins.indexOf(origin) === -1) {
-            let message = 'The CORS policy for this application does not allow access from the origin'
-        origin;
-            return callback(new Error(message), false);
-        }
-        return callback(null, true);
-    }
-}));
+app.use(cors());
+
+// let allowedOrigins = ['http://localhost:8080', 'https://git.heroku.com/myflixbypartearroyo.git'];
+// app.use(cors({
+//     origin: (origin, callback) => {
+//         if (!origin) return callback(null, true);
+//         if (allowedOrigins.indexOf(origin) === -1) {
+//             let message = 'The CORS policy for this application does not allow access from the origin'
+//         origin;
+//             return callback(new Error(message), false);
+//         }
+//         return callback(null, true);
+//     }
+// }));
 
 //home welcome message 
 app.get('/', (req, res) => {
