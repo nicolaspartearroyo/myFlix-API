@@ -1,4 +1,7 @@
 const mongoose = require('mongoose'),
+  bodyParser = require('body-parser'),
+  express = require('express'),
+  morgan = require('morgan'),
   Models = require('./models.js'),
   cors = require('cors'),
   { check, validationResult } = require('express-validator');
@@ -10,20 +13,16 @@ const Movies = Models.Movie;
 const Users = Models.User;
 const Directors = Models.Director;
 const Genres = Models.Genre;
+ 
+app = express();
+app.use(bodyParser.json());
+//Allow all domains to make request to my API
+app.use(cors());
+
+let auth = require('./auth')(app);
 
 // mongoose.connect('mongodb://localhost:27017/myFlixDB', { useNewUrlParser: true, useUnifiedTopology: true });
 mongoose.connect( process.env.CONNECTION_URI, { useNewUrlParser: true, useUnifiedTopology: true });
-
-const bodyParser = require('body-parser');
-const express = require('express'),
-  morgan = require('morgan'),
-  app = express();
-app.use(bodyParser.json());
-  
-let auth = require('./auth')(app);
-
-//Allow all domains to make request to my API
-app.use(cors());
 
 //home welcome message 
 app.get('/', (req, res) => {
