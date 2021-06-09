@@ -1,11 +1,10 @@
-const mongoose = require('mongoose');
-const Models = require('./models.js');
-const cors = require('cors');
+const mongoose = require('mongoose'),
+  Models = require('./models.js'),
+  cors = require('cors'),
+  { check, validationResult } = require('express-validator');
 
 const passport = require('passport');
 require('./passport');
-
-const { check, validationResult } = require('express-validator');
 
 const Movies = Models.Movie;
 const Users = Models.User;
@@ -246,10 +245,10 @@ app.use(express.static('public'));
 app.use(morgan('common'));
 
 //error handling
-// app.use((err, req, res, next) => {
-// console.error(err.stack);
-// res.status(500).send('Something broke!');
-// });
+app.use((err, req, res, next) => {
+console.error(err.stack);
+res.status(500).send('Something broke!');
+});
 
 // listen for requests
 const port = process.env.PORT || 8080;
