@@ -23,20 +23,8 @@ app.use(bodyParser.json());
   
 let auth = require('./auth')(app);
 
+//Allow all domains to make request to my API
 app.use(cors());
-
-// let allowedOrigins = ['http://localhost:8080', 'https://git.heroku.com/myflixbypartearroyo.git'];
-// app.use(cors({
-//     origin: (origin, callback) => {
-//         if (!origin) return callback(null, true);
-//         if (allowedOrigins.indexOf(origin) === -1) {
-//             let message = 'The CORS policy for this application does not allow access from the origin'
-//         origin;
-//             return callback(new Error(message), false);
-//         }
-//         return callback(null, true);
-//     }
-// }));
 
 //home welcome message 
 app.get('/', (req, res) => {
@@ -258,10 +246,10 @@ app.use(express.static('public'));
 app.use(morgan('common'));
 
 //error handling
-app.use((err, req, res, next) => {
-console.error(err.stack);
-res.status(500).send('Something broke!');
-});
+// app.use((err, req, res, next) => {
+// console.error(err.stack);
+// res.status(500).send('Something broke!');
+// });
 
 // listen for requests
 const port = process.env.PORT || 8080;
