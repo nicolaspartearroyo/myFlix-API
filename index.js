@@ -67,6 +67,19 @@ app.get('/movies/:Title', passport.authenticate('jwt', { session: false }), (req
     });
 });
 
+//Ge all users
+app.get('/users', passport.authenticate('jwt', { session: false }), (req, res) => {
+  Users.find()
+    .then((users) => {
+      res.status(201).json(users);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send('Error: ' + err);
+    });
+});
+
+
 //Create New User
 app.post('/users', [
   check('Username', 'Username is required').isLength({ min: 5 }),
