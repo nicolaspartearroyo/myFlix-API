@@ -17,22 +17,22 @@ const Genres = Models.Genre;
 app = express();
 app.use(bodyParser.json());
 //Allow all domains to make request to my API
-// app.use(cors());
+app.use(cors());
 
-let allowedOrigins = ['http://localhost:8080', 'http://localhost:1234', 'https://myflixbypartearroyo.herokuapp.com/'];
+// let allowedOrigins = ['http://localhost:8080', 'http://localhost:1234', 'https://myflixbypartearroyo.herokuapp.com/'];
 
-app.use(cors(
-  {
-    origin: (origin, callback) => {
-      if (!origin) return callback(null, true);
-      if (allowedOrigins.indexOf(origin) === -1) { // If a specific origin isn’t found on the list of allowed origins
-        let message = 'The CORS policy for this application doesn’t allow access from origin ' + origin;
-        return callback(new Error(message), false);
-      }
-      return callback(null, true);
-    }
-  }
-));
+// app.use(cors(
+//   {
+//     origin: (origin, callback) => {
+//       if (!origin) return callback(null, true);
+//       if (allowedOrigins.indexOf(origin) === -1) { // If a specific origin isn’t found on the list of allowed origins
+//         let message = 'The CORS policy for this application doesn’t allow access from origin ' + origin;
+//         return callback(new Error(message), false);
+//       }
+//       return callback(null, true);
+//     }
+//   }
+// ));
 
 let auth = require('./auth.js')(app);
 
@@ -81,6 +81,17 @@ app.get('/users', passport.authenticate('jwt', { session: false }), (req, res) =
     });
 });
 
+// Get a user by username
+app.get("/users/:username", (req, res) => {
+  Users.findOne({ Username: req.params.username })
+    .then(user => {
+      res.json(user);
+    })
+    .catch(err => {
+      console.error(err);
+      res.status(500).send("Error: " + err);
+    });
+});
 
 //Create New User
 app.post('/users', [
