@@ -183,10 +183,14 @@ app.post('/users/:Username/movies/:MovieID', passport.authenticate('jwt', { sess
 
 //Delete a favorite movie from user
 app.delete('/users/:username/favourites/:movieId', passport.authenticate('jwt', { session: false }), (req, res) => {
-  Users.findOneAndRemove({ FavoriteMovies: req.params.MovieID })
-    .then((FavoriteMovie) => {
-      if (!FavoriteMovie) {
-        res.status(400).send(req.params.FavoriteMovies + ' was not found');
+  Users.findOneAndUpdate({ Username: req.params.username }, {
+    $pull: { FavoriteMovies: req.params.movieId }
+  },
+    { new: true },
+    (err, updatedUser) => {
+      if (err) {
+        console.error(err);
+        res.status(500).send('Error: ' + err);
       } else {
         res.status(200).send(req.params.FavoriteMovies + ' was deleted.');
       }
