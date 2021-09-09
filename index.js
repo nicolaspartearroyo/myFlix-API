@@ -192,6 +192,8 @@ app.put('/users/:Username', [
  * @param {string} Username - Username required
  * @returns {object} - Returns movie details as an object
  */
+
+//this method was working on react
 app.post('/users/:Username/movies/:MovieID', passport.authenticate('jwt', { session: false }), (req, res) => {
   Users.findOneAndUpdate({ Username: req.params.Username }, {
     $push: { FavoriteMovies: req.params.MovieID }
@@ -206,6 +208,29 @@ app.post('/users/:Username/movies/:MovieID', passport.authenticate('jwt', { sess
       }
     });
 });
+
+//trying this method on angular
+app.post(
+  "/users/addtofavs/:Username/:MovieID",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    Users.findOneAndUpdate(
+      { Username: req.params.Username },
+      {
+        $addToSet: { Favorites: req.params.MovieID },
+      },
+      { new: true },
+      (err, updatedUser) => {
+        if (err) {
+          res.status(500).send("Error: " + err);
+        } else {
+          res.json(updatedUser);
+        }
+      }
+    );
+  }
+);
+
 /**
  * Delete a favorite movie from user
  * @method POST
